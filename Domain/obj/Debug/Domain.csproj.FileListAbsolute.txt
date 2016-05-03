@@ -3,3 +3,7 @@ c:\Users\admin\documents\visual studio 2012\Projects\WebStore\Domain\bin\Debug\D
 c:\Users\admin\documents\visual studio 2012\Projects\WebStore\Domain\bin\Debug\Domain.pdb
 c:\Users\admin\documents\visual studio 2012\Projects\WebStore\Domain\obj\Debug\Domain.dll
 c:\Users\admin\documents\visual studio 2012\Projects\WebStore\Domain\obj\Debug\Domain.pdb
+c:\Users\admin\documents\visual studio 2012\Projects\WebStore\Domain\bin\Debug\Domain.dll.config
+c:\Users\admin\documents\visual studio 2012\Projects\WebStore\Domain\bin\Debug\EntityFramework.dll
+c:\Users\admin\documents\visual studio 2012\Projects\WebStore\Domain\bin\Debug\EntityFramework.xml
+c:\Users\admin\documents\visual studio 2012\Projects\WebStore\Domain\bin\Debug\es\EntityFramework.resources.dll

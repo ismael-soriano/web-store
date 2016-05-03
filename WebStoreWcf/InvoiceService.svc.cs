@@ -3,30 +3,59 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
-using System.ServiceModel.Activation;
-using System.ServiceModel.Web;
 using System.Text;
+using Domain;
 
 namespace WebStoreWcf
 {
-    [ServiceContract(Namespace = "")]
-    [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
-    public class WebStoreService : IInvoiceService
+    public class InvoiceService : ServiceBase, IInvoiceService
     {
-        // Para usar HTTP GET, agregue el atributo [WebGet]. (El valor predeterminado de ResponseFormat es WebMessageFormat.Json)
-        // Para crear una operación que devuelva XML,
-        //     agregue [WebGet(ResponseFormat=WebMessageFormat.Xml)]
-        //     e incluya la siguiente línea en el cuerpo de la operación:
-        //         WebOperationContext.Current.OutgoingResponse.ContentType = "text/xml";
-        [OperationContract]
-        public void DoWork()
+        readonly IRepositoryInvoices _repository;
+        public InvoiceService(IRepositoryInvoices repository) : base(repository)
         {
-            // Agregue aquí la implementación de la operación
-            return;
+            if (null == repository)
+            {
+                throw new ArgumentNullException("repository");
+            }
+
+            _repository = repository;
         }
 
-        // Agregue aquí más operaciones y márquelas con [OperationContract]
+        public Invoice Add(Invoice invoice)
+        {
+            var customerNew = _repository.Invoices.Add(invoice);
+            SaveChanges();
+            return customerNew;
+        }
 
+        public Invoice Update(int id, Invoice invoice)
+        {
+            var oldInvoice = Get(id);
+            if (null == oldInvoice)
+            {
+                throw new NullReferenceException("The invoice can't be null");
+            }
+            oldInvoice.Operations = invoice.Operations;
+            SaveChanges();
+            return oldInvoice;
+        }
 
+        public Invoice Delete(int id)
+        {
+            var invoice = Get(id);
+            _repository.Invoices.Remove(invoice);
+            SaveChanges();
+            return invoice;
+        }
+
+        public IEnumerable<Invoice> GetAll()
+        {
+            return _repository.Invoices.ToList();
+        }
+
+        public Invoice Get(int id)
+        {
+            return _repository.Invoices.Where(c => c.Id == id).FirstOrDefault();
+        }
     }
 }

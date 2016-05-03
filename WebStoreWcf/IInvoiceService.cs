@@ -1,11 +1,10 @@
-﻿using System;
+﻿using Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.Serialization;
 using System.ServiceModel;
-using System.ServiceModel.Web;
-using Domain;
+using System.Text;
 
 namespace WebStoreWcf
 {
@@ -13,18 +12,18 @@ namespace WebStoreWcf
     public interface IInvoiceService
     {
         [OperationContract]
+        Invoice Add(Invoice invoice);
+
+        [OperationContract]
+        Invoice Update(int id, Invoice invoice);
+
+        [OperationContract]
+        Invoice Delete(int id);
+
+        [OperationContract]
         IEnumerable<Invoice> GetAll();
 
         [OperationContract]
-        string Get(int id);
-
-        [OperationContract]
-        string Add(Invoice invoice);
-
-        [OperationContract]
-        string Update(int id, Invoice invoice);
-
-        [OperationContract]
-        string Delete(int id);
+        Invoice Get(int id);
     }
 }

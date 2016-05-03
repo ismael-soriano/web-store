@@ -1,13 +1,16 @@
-﻿using System;
+﻿using Domain;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Infrastructure
+namespace Domain
 {
-    class ShopDbContext : DbContext, IUnitOfWork
+    public class ShopDbContext : DbContext, IRepositoryInvoices, IRepositoryProducts
     {
+        public IDbSet<Invoice> Invoices { get; set; }
+        public IDbSet<Product> Products { get; set; }
     }
 }

@@ -1,1 +1,12 @@
 c:\Users\admin\documents\visual studio 2012\Projects\WebStore\WebStoreWcf\obj\Debug\WebStoreWcf.csprojResolveAssemblyReference.cache
+c:\Users\admin\documents\visual studio 2012\Projects\WebStore\WebStoreWcf\bin\WebStoreWcf.dll
+c:\Users\admin\documents\visual studio 2012\Projects\WebStore\WebStoreWcf\bin\WebStoreWcf.pdb
+c:\Users\admin\documents\visual studio 2012\Projects\WebStore\WebStoreWcf\bin\Domain.dll
+c:\Users\admin\documents\visual studio 2012\Projects\WebStore\WebStoreWcf\bin\Infrastructure.dll
+c:\Users\admin\documents\visual studio 2012\Projects\WebStore\WebStoreWcf\bin\EntityFramework.dll
+c:\Users\admin\documents\visual studio 2012\Projects\WebStore\WebStoreWcf\bin\Domain.pdb
+c:\Users\admin\documents\visual studio 2012\Projects\WebStore\WebStoreWcf\bin\Infrastructure.pdb
+c:\Users\admin\documents\visual studio 2012\Projects\WebStore\WebStoreWcf\bin\EntityFramework.xml
+c:\Users\admin\documents\visual studio 2012\Projects\WebStore\WebStoreWcf\bin\es\EntityFramework.resources.dll
+c:\Users\admin\documents\visual studio 2012\Projects\WebStore\WebStoreWcf\obj\Debug\WebStoreWcf.dll
+c:\Users\admin\documents\visual studio 2012\Projects\WebStore\WebStoreWcf\obj\Debug\WebStoreWcf.pdb

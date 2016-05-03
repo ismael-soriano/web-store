@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    public class Product
+    public class Operation : EntityBase
     {
         [Required]
-        [MaxLength(50)]
-        public string Name { get; set; }
-
+        public Product Product { get; set; }
+        [Required]
+        public int Quantity { get; set; }
         [Required]
         public decimal Price { get; set; }
     }
