@@ -1,0 +1,5 @@
+c:\Users\admin\documents\visual studio 2012\Projects\WebStore\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
+c:\Users\admin\documents\visual studio 2012\Projects\WebStore\Domain\bin\Debug\Domain.dll
+c:\Users\admin\documents\visual studio 2012\Projects\WebStore\Domain\bin\Debug\Domain.pdb
+c:\Users\admin\documents\visual studio 2012\Projects\WebStore\Domain\obj\Debug\Domain.dll
+c:\Users\admin\documents\visual studio 2012\Projects\WebStore\Domain\obj\Debug\Domain.pdb
