@@ -10,3 +10,7 @@ c:\Users\admin\documents\visual studio 2012\Projects\WebStore\WebStoreWcf\bin\En
 c:\Users\admin\documents\visual studio 2012\Projects\WebStore\WebStoreWcf\bin\es\EntityFramework.resources.dll
 c:\Users\admin\documents\visual studio 2012\Projects\WebStore\WebStoreWcf\obj\Debug\WebStoreWcf.dll
 c:\Users\admin\documents\visual studio 2012\Projects\WebStore\WebStoreWcf\obj\Debug\WebStoreWcf.pdb
+C:\Users\admin\Documents\Visual Studio 2012\Projects\WebStore\WebStoreWcf\bin\Autofac.dll
+C:\Users\admin\Documents\Visual Studio 2012\Projects\WebStore\WebStoreWcf\bin\Autofac.Integration.Wcf.dll
+C:\Users\admin\Documents\Visual Studio 2012\Projects\WebStore\WebStoreWcf\bin\Autofac.xml
+C:\Users\admin\Documents\Visual Studio 2012\Projects\WebStore\WebStoreWcf\bin\Autofac.Integration.Wcf.xml
