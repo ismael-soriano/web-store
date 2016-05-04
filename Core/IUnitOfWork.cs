@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    public interface IUnitOfWork : IDisposable
+    public interface IUnitOfWork : IUnitOfWorkForService
     {
-        DbEntityEntry<TEntity> Entry<TEntity>(TEntity entity) where TEntity : class;
-        int SaveChanges();
+        IDbSet<TEntity> Set<TEntity>() where TEntity : class;
     }
 }

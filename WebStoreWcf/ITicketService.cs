@@ -9,21 +9,21 @@ using System.Text;
 namespace WebStoreWcf
 {
     [ServiceContract]
-    public interface IInvoiceService
+    public interface ITicketService
     {
         [OperationContract]
-        Invoice Add(Invoice invoice);
+        Ticket Add(Ticket invoice);
 
         [OperationContract]
-        Invoice Update(int id, Invoice invoice);
+        Ticket Update(int id, Ticket invoice);
 
         [OperationContract]
-        Invoice Delete(int id);
+        Ticket Delete(int id);
 
         [OperationContract]
-        IEnumerable<Invoice> GetAll();
+        IEnumerable<Ticket> GetAll();
 
         [OperationContract]
-        Invoice Get(int id);
+        Ticket Get(int id);
     }
 }

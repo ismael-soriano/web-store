@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    public class Operation : EntityBase
+    public class TicketDetail : EntityBase
     {
         [Required]
         public Product Product { get; set; }

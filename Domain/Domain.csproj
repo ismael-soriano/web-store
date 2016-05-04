@@ -46,17 +46,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EntityBase.cs" />
-    <Compile Include="Invoice.cs" />
-    <Compile Include="IRepositoryInvoices.cs" />
-    <Compile Include="IRepositoryProducts.cs" />
-    <Compile Include="IUnitOfWork.cs" />
-    <Compile Include="Operation.cs" />
-    <Compile Include="Product.cs" />
+    <Compile Include="Ticket\Ticket.cs" />
+    <Compile Include="Ticket\IRepositoryTickets.cs" />
+    <Compile Include="Product\IRepositoryProducts.cs" />
+    <Compile Include="TicketDetail.cs" />
+    <Compile Include="Product\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{c941eb73-7444-4ad5-b0f6-502ccb93299b}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    public class Invoice : EntityBase
+    public class Ticket : EntityBase
     {
-        public Invoice()
+        public Ticket()
         {
-            Operations = new List<Operation>();
+            Operations = new HashSet<TicketDetail>();
         }
 
         [Required]
         public DateTime Date { get; set; }
-        public virtual IEnumerable<Operation> Operations { get; set; }
+        public virtual ICollection<TicketDetail> Operations { get; set; }
     }
 }

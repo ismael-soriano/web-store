@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    public class Product
+    public class Product : EntityBase
     {
         [Required]
         [MaxLength(50)]

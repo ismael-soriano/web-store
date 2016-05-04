@@ -8,9 +8,11 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    public class ShopDbContext : DbContext, IRepositoryInvoices, IRepositoryProducts
+    public class ShopDbContext : DbContext
     {
-        public IDbSet<Invoice> Invoices { get; set; }
+        public ShopDbContext() : base("DefaultConection"){}
+
+        public IDbSet<Ticket> Invoices { get; set; }
         public IDbSet<Product> Products { get; set; }
     }
 }

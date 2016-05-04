@@ -5,30 +5,32 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using Domain;
+using Core.Utils;
 
 namespace WebStoreWcf
 {
-    public class InvoiceService : ServiceBase, IInvoiceService
+    public class TicketService : ServiceBase, ITicketService
     {
-        readonly IRepositoryInvoices _repository;
-        public InvoiceService(IRepositoryInvoices repository) : base(repository)
+        readonly IRepositoryTickets _repository;
+        public TicketService(IRepositoryTickets repository) : base(repository)
         {
-            if (null == repository)
+            Check.NotNull(repository, "repository");
+            /*if (null == repository)
             {
                 throw new ArgumentNullException("repository");
-            }
+            }*/
 
             _repository = repository;
         }
 
-        public Invoice Add(Invoice invoice)
+        public Ticket Add(Ticket invoice)
         {
             var customerNew = _repository.Invoices.Add(invoice);
             SaveChanges();
             return customerNew;
         }
 
-        public Invoice Update(int id, Invoice invoice)
+        public Ticket Update(int id, Ticket invoice)
         {
             var oldInvoice = Get(id);
             if (null == oldInvoice)
@@ -40,7 +42,7 @@ namespace WebStoreWcf
             return oldInvoice;
         }
 
-        public Invoice Delete(int id)
+        public Ticket Delete(int id)
         {
             var invoice = Get(id);
             _repository.Invoices.Remove(invoice);
@@ -48,12 +50,12 @@ namespace WebStoreWcf
             return invoice;
         }
 
-        public IEnumerable<Invoice> GetAll()
+        public IEnumerable<Ticket> GetAll()
         {
             return _repository.Invoices.ToList();
         }
 
-        public Invoice Get(int id)
+        public Ticket Get(int id)
         {
             return _repository.Invoices.Where(c => c.Id == id).FirstOrDefault();
         }

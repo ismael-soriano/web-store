@@ -2,18 +2,25 @@
 using Domain;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace WebStoreWcf
+namespace Infrastructure
 {
-    public class ServiceBase :IDisposable
+    public class RepositoryBase
     {
         readonly IUnitOfWork _unitOfWork;
-        public ServiceBase(IUnitOfWork unitOfWork)
+        public RepositoryBase(IUnitOfWork unitOfWork)
         {
             Check.NotNull(unitOfWork, "unitOfWork");
             _unitOfWork = unitOfWork;
+        }
+
+        public IDbSet<TEntity> Set<TEntity>() where TEntity : class
+        {
+            return _unitOfWork.Set<TEntity>();
         }
 
         public int SaveChanges()
@@ -25,5 +32,6 @@ namespace WebStoreWcf
         {
             _unitOfWork.Dispose();
         }
+
     }
 }

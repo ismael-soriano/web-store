@@ -75,7 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="InvoiceService.svc" />
+    <Content Include="TicketService.svc" />
     <Content Include="ProductService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -84,9 +84,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="IInvoiceService.cs" />
-    <Compile Include="InvoiceService.svc.cs">
-      <DependentUpon>InvoiceService.svc</DependentUpon>
+    <Compile Include="ITicketService.cs" />
+    <Compile Include="TicketService.svc.cs">
+      <DependentUpon>TicketService.svc</DependentUpon>
     </Compile>
     <Compile Include="IProductService.cs" />
     <Compile Include="ProductService.svc.cs">
@@ -108,6 +108,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{c941eb73-7444-4ad5-b0f6-502ccb93299b}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{31a16e60-83dc-4b13-b036-48acfff588f0}</Project>
       <Name>Domain</Name>

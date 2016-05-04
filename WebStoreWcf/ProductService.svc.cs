@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using Domain;
+using Core.Utils;
 
 namespace WebStoreWcf
 {
@@ -13,16 +14,13 @@ namespace WebStoreWcf
         readonly IRepositoryProducts _repository;
         public ProductService(IRepositoryProducts repository)
         {
-            if (null == repository)
-            {
-                throw new ArgumentNullException("repository");
-            }
-
+            Check.NotNull(repository, "repository");
             _repository = repository;
         }
+
         public IEnumerable<Product> GetAll()
         {
-            return _repository.Products.ToList();
+            return _repository.GetAll();
         }
     }
 }
