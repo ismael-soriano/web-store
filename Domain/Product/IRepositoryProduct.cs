@@ -2,9 +2,9 @@
 using System.Data.Entity;
 using Core;
 
-namespace Domain
+namespace Domain.Product
 {
-    public interface IRepositoryProducts : IUnitOfWork
+    public interface IRepositoryProduct
     {
         IEnumerable<Product> GetAll();
     }

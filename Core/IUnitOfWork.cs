@@ -6,10 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain
+namespace Core
 {
-    public interface IUnitOfWork : IUnitOfWorkForService
+    public interface IUnitOfWork : IDisposable
     {
-        IDbSet<TEntity> Set<TEntity>() where TEntity : class;
+        int SaveChanges();
     }
 }

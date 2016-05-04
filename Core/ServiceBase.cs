@@ -1,13 +1,13 @@
 ﻿using Core.Utils;
-using Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace WebStoreWcf
+namespace Core
 {
-    public class ServiceBase :IDisposable
+    public class ServiceBase: IDisposable
     {
         readonly IUnitOfWork _unitOfWork;
         public ServiceBase(IUnitOfWork unitOfWork)
@@ -16,7 +16,7 @@ namespace WebStoreWcf
             _unitOfWork = unitOfWork;
         }
 
-        public int SaveChanges()
+        protected int SaveChanges()
         {
             return _unitOfWork.SaveChanges();
         }

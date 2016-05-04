@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain
+namespace Core
 {
-    public interface IUnitOfWorkForService : IDisposable
+    public interface IDbBase
     {
-        int SaveChanges();
+        IDbSet<TEntity> Set<TEntity>() where TEntity : class;
     }
 }

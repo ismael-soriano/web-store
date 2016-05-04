@@ -1,4 +1,5 @@
-﻿using Domain;
+﻿using Core;
+using Domain.Ticket;
 using System;
 using System.Collections.Generic;
 using System.Linq;

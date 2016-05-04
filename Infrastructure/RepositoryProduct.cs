@@ -3,22 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Domain;
+using Core;
 using System.Data.Entity;
+using Domain.Product;
+using Core.Utils;
 
 namespace Infrastructure
 {
-    public class RepositoryProduct : RepositoryBase, IRepositoryProducts
+    public class RepositoryProduct : RepositoryBase<Domain.Product.Product>, IRepositoryProduct
     {
-        readonly IDbSet<Product> Products;
-        public RepositoryProduct(IUnitOfWork unitOfWork) : base(unitOfWork)
-        {
-            Products = Set<Product>();
-        }
+        public RepositoryProduct(IDbBase context) : base(context) { }
 
         public IEnumerable<Product> GetAll()
         {
-            return Products.Select(c => c);
+            return Entity.Select(c => c);
         }
+
     }
 }

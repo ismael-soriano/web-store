@@ -45,16 +45,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EntityBase.cs" />
     <Compile Include="Ticket\Ticket.cs" />
-    <Compile Include="Ticket\IRepositoryTickets.cs" />
-    <Compile Include="Product\IRepositoryProducts.cs" />
-    <Compile Include="TicketDetail.cs" />
+    <Compile Include="Ticket\IRepositoryTicket.cs" />
+    <Compile Include="Product\IRepositoryProduct.cs" />
+    <Compile Include="Ticket\TicketDetail.cs" />
     <Compile Include="Product\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

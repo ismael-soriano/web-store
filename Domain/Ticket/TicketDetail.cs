@@ -1,16 +1,17 @@
-﻿using System;
+﻿using Core;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain
+namespace Domain.Ticket
 {
     public class TicketDetail : EntityBase
     {
         [Required]
-        public Product Product { get; set; }
+        public Domain.Product.Product Product { get; set; }
         [Required]
         public int Quantity { get; set; }
         [Required]

@@ -1,5 +1,5 @@
 ﻿using Core.Utils;
-using Domain;
+using Core;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -9,28 +9,21 @@ using System.Threading.Tasks;
 
 namespace Infrastructure
 {
-    public class RepositoryBase
+    public class RepositoryBase<T> where T : EntityBase
     {
-        readonly IUnitOfWork _unitOfWork;
-        public RepositoryBase(IUnitOfWork unitOfWork)
+        readonly IDbBase _context;
+        public RepositoryBase(IDbBase context)
         {
-            Check.NotNull(unitOfWork, "unitOfWork");
-            _unitOfWork = unitOfWork;
+            Check.NotNull(context, "context");
+            _context = context;
         }
 
-        public IDbSet<TEntity> Set<TEntity>() where TEntity : class
+        protected IDbSet<T> Entity
         {
-            return _unitOfWork.Set<TEntity>();
-        }
-
-        public int SaveChanges()
-        {
-            return _unitOfWork.SaveChanges();
-        }
-
-        public void Dispose()
-        {
-            _unitOfWork.Dispose();
+            get
+            {
+                return _context.Set<T>();
+            }
         }
 
     }

@@ -4,18 +4,22 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
-using Domain;
+using Core;
 using Core.Utils;
+using Domain.Product;
 
 namespace WebStoreWcf
 {
-    public class ProductService : IProductService
+    public class ProductService : ServiceBase, IProductService
     {
-        readonly IRepositoryProducts _repository;
-        public ProductService(IRepositoryProducts repository)
+        readonly IRepositoryProduct _repository;
+        readonly IUnitOfWork _unitOfWork;
+        public ProductService(IRepositoryProduct repository, IUnitOfWork unitOfWork) : base(unitOfWork)
         {
             Check.NotNull(repository, "repository");
+            Check.NotNull(unitOfWork, "unitOfWork");
             _repository = repository;
+            _unitOfWork = unitOfWork;
         }
 
         public IEnumerable<Product> GetAll()
